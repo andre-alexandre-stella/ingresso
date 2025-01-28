@@ -8,15 +8,15 @@ function comprar() {
 
     if (tipoIngresso == "pista") {
         if (disponivelPista >= qtde) disponivelPista -= qtde;
-        else mostrarMensagem();
+        else mostrarMensagemIndisponivel(tipoIngresso);
     }
     if (tipoIngresso == "superior") {
         if (disponivelSuperior >= qtde) disponivelSuperior -= qtde;
-        else mostrarMensagem();
+        else mostrarMensagemIndisponivel(tipoIngresso);
     }
     if (tipoIngresso == "inferior") {
         if (disponivelInferior >= qtde) disponivelInferior -= qtde;
-        else mostrarMensagem();
+        else mostrarMensagemIndisponivel(tipoIngresso);
     }
 
     document.getElementById("qtd").value = 0;
@@ -30,8 +30,8 @@ function mostrarQtdeDisponivel() {
     document.getElementById("qtd-inferior").textContent = disponivelInferior;
 }
 
-function mostrarMensagem() {
-    alert("Qtde indisponível para o tipo de ingresso.");
+function mostrarMensagemIndisponivel(tipoIngresso) {
+    alert(`Qtde indisponível para o tipo de ingresso: ${tipoIngresso}`);
 }
 
 let disponivelPista = parseInt(document.getElementById("qtd-pista").textContent);
