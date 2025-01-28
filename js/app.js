@@ -1,7 +1,7 @@
 function comprar() {
     let tipoIngresso = document.getElementById("tipo-ingresso").value;
     let qtde = parseInt(document.getElementById("qtd").value);
-    if (qtde < 0) {
+    if (isNaN(qtde) || qtde <= 0) {
         alert("Insira uma qtde maior que zero.");
         return;
     }
